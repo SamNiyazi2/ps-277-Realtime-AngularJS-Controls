@@ -1,2 +1,9 @@
 ﻿
-<ps-gauge></ps-gauge>
+<ps-gauge ng-if="!error"></ps-gauge>
+
+<div style="padding:20px" ng-if="error">
+
+    <h5>Disconnected</h5>
+    <h5>ssn-2021030-1022</h5>
+
+</div>
