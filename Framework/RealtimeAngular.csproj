@@ -19,6 +19,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\appRouteConfig.js" />
+    <Content Include="app\directives\rtaDashboardDirective.js" />
     <Content Include="ext-modules\psWebMetricsService\psWebMetricsService.js" />
     <Content Include="Content\angular-gridster.min.css" />
     <Content Include="ext-modules\psDashboard\psDashboard.css" />
@@ -896,7 +899,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\dialogs\" />
-    <Folder Include="app\directives\" />
     <Folder Include="app\widgets\" />
   </ItemGroup>
   <PropertyGroup>
