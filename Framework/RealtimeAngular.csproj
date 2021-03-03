@@ -63,6 +63,9 @@
     <Content Include="app\directives\rtaDashboardDirective.js" />
     <Content Include="app\widgets\rtaGaugeWidget.js" />
     <Content Include="app\widgets\rtaGaugeWidgetTemplate.html" />
+    <Content Include="ext-modules\psCharts\psChartsModule.js" />
+    <Content Include="ext-modules\psCharts\psGaugeDirective.js" />
+    <Content Include="ext-modules\psCharts\psGaugeTemplate.html" />
     <Content Include="ext-modules\psWebMetricsService\psWebMetricsService.js" />
     <Content Include="Content\angular-gridster.min.css" />
     <Content Include="ext-modules\psDashboard\psDashboard.css" />
@@ -901,7 +904,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\dialogs\" />
-    <Folder Include="ext-modules\psCharts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
