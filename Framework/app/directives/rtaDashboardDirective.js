@@ -3,14 +3,21 @@
 
 'use strict';
 
+console.log('rtaDashboardDIrective - 20210303-0446 ');
+
 angular.module('app').directive('rtaDashboard', ['$localStorage', function ($localStorage) {
+
+    console.log('rtaDashboardDIrective - 20210303-0446 A ');
 
     return {
         scope: {
 
         },
         template: '<ps-dashboard></ps-dashboard>',
-        link: function {
+        link: function (scope) {
+
+
+            console.log('rtaDashboardDIrective - 20210303-0446 - LINK');
 
             scope.gridsterOptions = {
 
@@ -23,7 +30,22 @@ angular.module('app').directive('rtaDashboard', ['$localStorage', function ($loc
             };
 
 
-            scope.widgetDefinitions = [];
+            scope.widgetDefinitions = [
+
+                {
+                    title: 'Gauge',
+                    settings: {
+                        sizeX: 3,
+                        sizeY: 3,
+                        minSizeX: 2,
+                        minSizeY: 2,
+                        template: '<rta-gauge-widget ></rta-gauge>',
+                        widgetSettings: {
+                            metric: 'cpuPct'
+                        }
+                    }
+                }
+            ];
 
             scope.widgets = $localStorage.widgets || [];
 

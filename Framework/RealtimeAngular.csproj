@@ -61,8 +61,8 @@
   <ItemGroup>
     <Content Include="app\appRouteConfig.js" />
     <Content Include="app\directives\rtaDashboardDirective.js" />
-    <Content Include="app\widgets\rtaGaugeWidget.js" />
-    <Content Include="app\widgets\rtaGaugeWidgetTemplate.html" />
+    <Content Include="app\widgets\rtaGauge\rtaGaugeWidgetDirective.js" />
+    <Content Include="app\widgets\rtaGauge\rtaGaugeWidgetTemplate.html" />
     <Content Include="ext-modules\psCharts\psChartsModule.js" />
     <Content Include="ext-modules\psCharts\psGaugeDirective.js" />
     <Content Include="ext-modules\psCharts\psGaugeTemplate.html" />

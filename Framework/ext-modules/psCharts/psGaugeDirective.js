@@ -3,7 +3,7 @@
 
 'use strict';
 
-console.log('psChartsModule loaded - 20240303-0423 (A-C)');
+console.log('psGaugeDirective loaded - 20240303-0423 (A-E)');
 
 
 angular.module('psChartsModule').directive('psGauge', ['psWebMetricsService',
@@ -11,7 +11,56 @@ angular.module('psChartsModule').directive('psGauge', ['psWebMetricsService',
 
     function (psWebMetricsService) {
 
-        console.log('psChartsModule loaded - 20240303-0423-B');
+        console.log('psGaugeDirective loaded - 20240303-0423-B');
+
+
+
+
+        function setupWidget(scope, elem, data) {
+
+
+            console.log('psGaugeDirective loaded - 20240303-0423-D'); 
+
+            if (!scope.initialized) {
+
+                console.log('psGaugeDirective loaded - 20240303-0423-E');
+
+                scope.options = {
+                    width: scope.width || 200,
+                    height: scope.height || 200,
+                    redFrom: 90,
+                    redTo: 100,
+                    yellowFrom: 75,
+                    yellowTo: 90,
+                    minorTicks: 5
+                };
+
+                scope.title = psWebMetricsService.getTitleForMetric(scope.m)
+
+                scope.data = google.visualization.arrayToDataTable([
+
+                    ['Label', 'Value'],
+                    [scope.title, 0]
+                ]);
+
+                scope.chart = new google.visualization.Gauge(elem[0]);
+
+                scope.initialized = true;
+ 
+
+            }
+
+         //   scope.data.setValue(0, 0, scope.title);
+
+            if (data) {
+                scope.data.setValue(0, 1, Math.round(data[scope.metric]));
+            } else {
+                scope.data.setValue(0, 1, 0);
+            }
+
+            scope.chart.draw(scope.data, scope.options);
+        }
+
 
         return {
 
@@ -21,45 +70,25 @@ angular.module('psChartsModule').directive('psGauge', ['psWebMetricsService',
 
             link: function (scope, elem, attrs) {
 
-                console.log('psChartsModule loaded - 20240303-0423-C');
+                console.log('psGaugeDirective loaded - 20240303-0423-C');
 
-                scope.options = {
-                    width: scope.width || 200, height: scope.height || 200,
-                    redFrom: 90,
-                    redTo: 100,
-                    yellowFrom: 75,
-                    yellowTo: 90,
-                    minorTicks: 5
-                };
 
-                scope.title = psWebMetricsService.getTitleForMetrics(scope.m)
 
                 scope.initialized = false;
 
+                setupWidget(scope, elem, null);
+
                 scope.$on('psWebMetricsService-received-data-event', function (evt, data) {
 
-                    if (!scope.initialized) {
-
-                        scope.data = google.visualization.arrayToDataTable([
-
-                            ['Label', 'Value'],
-                            [scope.title, 0]
-                        ]);
-
-                        scope.chart = new google.visualization.Gauge(elem[0]);
-
-                        scope.initialized = true;
-
-                    }
-
-                    scope.data.setValue(0, 0, scope.title);
-                    scope.data.setValue(0, 1, Math.round(data[scope.metric]));
-                    scope.chart.draw(scope.data, scope.options);
+                    setupWidget(scope, elem, data);
 
 
                 });
 
             }
+
+
+
 
         };
 
