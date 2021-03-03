@@ -26,7 +26,7 @@ angular.module('app').directive('rtaDashboard', ['$localStorage', function ($loc
                 outerMargin: false,
                 pushing: true,
                 floating: true,
-                swapping:true
+                swapping: true
             };
 
 
@@ -47,7 +47,19 @@ angular.module('app').directive('rtaDashboard', ['$localStorage', function ($loc
                 }
             ];
 
-            scope.widgets = $localStorage.widgets || [];
+            // 03/03/2021 09:11 am - SSN - [20210303-0846] - [002] - M03-10 - Resizing the gauge
+            // Debugging local storage
+            // scope.widgets = $localStorage.widgets || [];
+
+            if ($localStorage.widgets) {
+
+                console.log('rtaDashboardDirective - Restoring widgets from storage - 20210303-092-AAA');
+                scope.widgets = $localStorage.widgets;
+            } else {
+
+                console.log('rtaDashboardDirective - Initializing widgets - No local storage widgets - 20210303-092-ZZZ');
+                scope.widgets = [];
+            }
 
             scope.$watch('widgets', function () {
 

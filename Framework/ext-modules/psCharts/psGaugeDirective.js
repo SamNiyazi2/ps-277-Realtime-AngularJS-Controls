@@ -35,6 +35,19 @@ angular.module('psChartsModule').directive('psGauge', ['psWebMetricsService',
                     minorTicks: 5
                 };
 
+                // 03/03/2021 09:00 am - SSN - [20210303-0846] - [001] - M03-10 - Resizing the gauge
+                let widget = elem.closest('.gridster-item');
+                scope.options.width = widget.width();
+                scope.options.height = widget.height();
+
+                // Monitor the widget size 
+                widget.resize(function () {
+                    scope.options.width = widget.width();
+                    scope.options.height = widget.height();
+                });
+
+
+
                 scope.title = psWebMetricsService.getTitleForMetric(scope.metric)
 
                 scope.data = google.visualization.arrayToDataTable([
