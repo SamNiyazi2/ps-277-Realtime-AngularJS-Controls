@@ -35,7 +35,7 @@ angular.module('psChartsModule').directive('psGauge', ['psWebMetricsService',
                     minorTicks: 5
                 };
 
-                scope.title = psWebMetricsService.getTitleForMetric(scope.m)
+                scope.title = psWebMetricsService.getTitleForMetric(scope.metric)
 
                 scope.data = google.visualization.arrayToDataTable([
 

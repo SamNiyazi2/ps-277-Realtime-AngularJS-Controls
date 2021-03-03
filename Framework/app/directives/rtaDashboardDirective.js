@@ -19,7 +19,7 @@ angular.module('app').directive('rtaDashboard', ['$localStorage', function ($loc
 
             console.log('rtaDashboardDIrective - 20210303-0446 - LINK');
 
-            scope.gridsterOptions = {
+            scope.gridsterOpts = {
 
                 columns: 12,
                 margins: [20, 20],
@@ -35,8 +35,8 @@ angular.module('app').directive('rtaDashboard', ['$localStorage', function ($loc
                 {
                     title: 'Gauge',
                     settings: {
-                        sizeX: 3,
-                        sizeY: 3,
+                        sizeX: 2,
+                        sizeY: 2,
                         minSizeX: 2,
                         minSizeY: 2,
                         template: '<rta-gauge-widget ></rta-gauge>',

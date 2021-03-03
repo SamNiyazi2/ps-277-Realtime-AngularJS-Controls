@@ -14,14 +14,13 @@ angular.module('psWebMetricsService', []).factory('psWebMetricsService', [
 
 
         // 03/03/2021 05:58 am - SSN - [20210303-0437] - [002] - M03-08 - Showing the gauge
-        if (false) {
+        if (true) {
 
-            //        $.connection.hub.url = 'http://localhost:50447/signalr';
-            $.connection.hub.url = '/signalr';
-
+            $.connection.hub.url = 'http://localhost:65470/signalr';
 
 
-            var hub = $.connection.myHub1;
+
+            var hub = $.connection.metricHub;
             // Create a function that the hub can call to broadcast messages.
             hub.client.broadcastMessage = function (time, bandwidthPct, cpuPct,
                 salesAmt, alphaSalesAmt, betaSalesAmt) {
@@ -83,7 +82,7 @@ angular.module('psWebMetricsService', []).factory('psWebMetricsService', [
         };
 
         return {
-            getTitleForMetric: getTitleForMetric 
+            getTitleForMetric: getTitleForMetric
         };
 
     }
