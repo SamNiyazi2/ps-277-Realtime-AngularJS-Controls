@@ -1,15 +1,11 @@
 ﻿'use strict';
-
-
-console.log('psWebMetricsService - 20210303-0545  (A)')
+ 
 
 angular.module('psWebMetricsService', []).factory('psWebMetricsService', [
     '$rootScope',
     function ($rootScope) {
 
-        console.log('psWebMetricsService - 20210303-0545 - A ')
-
-
+        
         // Declare a proxy to reference the hub.
 
 
@@ -81,8 +77,17 @@ angular.module('psWebMetricsService', []).factory('psWebMetricsService', [
             return undefined;
         };
 
+
+
+        // 03/03/2021 09:50 am - SSN - [20210303-0928] - [002] - M03-12 - Modifying gauge settings
+        var getMetricsArray = function () {
+            return ['time', 'bandwidthPct', 'cpuPct', 'salesAmt', 'alphaSalesAmt', 'betaSalesAmt'];
+        }
+
+
         return {
-            getTitleForMetric: getTitleForMetric
+            getTitleForMetric: getTitleForMetric,
+            getMetricsArray: getMetricsArray 
         };
 
     }

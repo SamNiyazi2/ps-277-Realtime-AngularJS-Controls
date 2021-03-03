@@ -3,27 +3,17 @@
 
 'use strict';
 
-console.log('psGaugeDirective loaded - 20240303-0423 (A-E)');
-
 
 angular.module('psChartsModule').directive('psGauge', ['psWebMetricsService',
 
 
     function (psWebMetricsService) {
 
-        console.log('psGaugeDirective loaded - 20240303-0423-B');
-
-
-
 
         function setupWidget(scope, elem, data) {
 
 
-            console.log('psGaugeDirective loaded - 20240303-0423-D'); 
-
             if (!scope.initialized) {
-
-                console.log('psGaugeDirective loaded - 20240303-0423-E');
 
                 scope.options = {
                     width: scope.width || 200,
@@ -49,6 +39,10 @@ angular.module('psChartsModule').directive('psGauge', ['psWebMetricsService',
 
 
                 scope.title = psWebMetricsService.getTitleForMetric(scope.metric)
+
+                scope.setTitle = function (newTitle) {
+                    scope.title = newTitle;
+                }
 
                 scope.data = google.visualization.arrayToDataTable([
 
@@ -82,9 +76,6 @@ angular.module('psChartsModule').directive('psGauge', ['psWebMetricsService',
             templateUrl: '/ext-modules/psCharts/psGaugeTemplate.html',
 
             link: function (scope, elem, attrs) {
-
-                console.log('psGaugeDirective loaded - 20240303-0423-C');
-
 
 
                 scope.initialized = false;
