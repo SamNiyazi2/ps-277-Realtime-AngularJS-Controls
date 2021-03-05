@@ -86,9 +86,12 @@
     <Content Include="app\directives\rtaDashboardDirective.js" />
     <Content Include="app\widgets\rtaGauge\rtaGaugeWidgetDirective.js" />
     <Content Include="app\widgets\rtaGauge\rtaGaugeWidgetTemplate.html" />
+    <Content Include="app\widgets\rtaGauge\rtaLineChartTemplate.html" />
+    <Content Include="app\widgets\rtaGauge\rtaLineChartWidgetDirective.js" />
     <Content Include="ext-modules\psCharts\psChartsModule.js" />
     <Content Include="ext-modules\psCharts\psGaugeDirective.js" />
     <Content Include="ext-modules\psCharts\psGaugeTemplate.html" />
+    <Content Include="ext-modules\psCharts\psLineChartDirective.js" />
     <Content Include="ext-modules\psWebMetricsService\psWebMetricsService.js" />
     <Content Include="Content\angular-gridster.min.css" />
     <Content Include="ext-modules\psDashboard\psDashboard.css" />

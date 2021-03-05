@@ -32,7 +32,7 @@ namespace RealtimeAngular
 
             hub = GlobalHost.ConnectionManager.GetHubContext<MetricHub>();
 
-            taskTimer = new Timer(onTimerElased, null, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(0.1));
+            taskTimer = new Timer(onTimerElased, null, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1));
         }
 
 
@@ -46,7 +46,8 @@ namespace RealtimeAngular
             if (bandwidthPct > 100) bandwidthPct = 100;
             if (bandwidthPct < 0) bandwidthPct = 0;
 
-            cpuPct = 15 * r.NextDouble() - 7.5;
+            // cpuPct = 15 * r.NextDouble() - 7.5;
+            cpuPct = 20 + 15 * r.NextDouble() ;
             if (cpuPct > 100) cpuPct = 100;
             if (cpuPct < 0) cpuPct = 0;
 

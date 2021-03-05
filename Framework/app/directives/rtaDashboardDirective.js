@@ -2,10 +2,10 @@
 // 03/03/2021 03:37 am - SSN - [20210303-0336] - [001] - M03-04 - Dashboard creation
 
 'use strict';
- 
+
 
 angular.module('app').directive('rtaDashboard', ['$localStorage', function ($localStorage) {
-     
+
 
     return {
         scope: {
@@ -14,7 +14,7 @@ angular.module('app').directive('rtaDashboard', ['$localStorage', function ($loc
         template: '<ps-dashboard></ps-dashboard>',
         link: function (scope) {
 
- 
+
             scope.gridsterOpts = {
 
                 columns: 12,
@@ -35,11 +35,26 @@ angular.module('app').directive('rtaDashboard', ['$localStorage', function ($loc
                         sizeY: 2,
                         minSizeX: 2,
                         minSizeY: 2,
-                        template: '<rta-gauge-widget ></rta-gauge>',
+                        template: '<rta-gauge-widget ></rta-gauge-widget>',
                         widgetSettings: {
                             metric: 'cpuPct',
                             templateUrl: 'app/dialogs/rtaSelectMetricTemplate.html',
-                            controller:'rtaSelectMetricController'
+                            controller: 'rtaSelectMetricController'
+                        }
+                    }
+                },
+                {
+                    title: 'Line Chart',
+                    settings: {
+                        sizeX: 2,
+                        sizeY: 2,
+                        minSizeX: 2,
+                        minSizeY: 2,
+                        template: '<rta-line-chart-widget ></rta-line-chart-widget>',
+                        widgetSettings: {
+                            metric: 'cpuPct',
+                            templateUrl: 'app/dialogs/rtaSelectMetricTemplate.html',
+                            controller: 'rtaSelectMetricController'
                         }
                     }
                 }
@@ -50,10 +65,10 @@ angular.module('app').directive('rtaDashboard', ['$localStorage', function ($loc
             // scope.widgets = $localStorage.widgets || [];
 
             if ($localStorage.widgets) {
-                 
+
                 scope.widgets = $localStorage.widgets;
             } else {
-                 
+
                 scope.widgets = [];
             }
 

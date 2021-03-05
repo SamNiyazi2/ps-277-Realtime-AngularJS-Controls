@@ -29,7 +29,6 @@
     <!--// 03/03/2021 06:31 am - SSN - [20210303-0437] - [003] - M03-08 - Showing the gauge
         Replaced. Current settings show nothing.  No errors.  Testing.
         -->
-
     <!--<script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script>
         google.load('visualization', '1.0', { 'packages': ['gauge'] });
@@ -37,7 +36,7 @@
             angular.bootstrap(document, ['app']);
         });
     </script>-->
-  
+
 
 
     <script src="ext-modules/psMenu/psMenuModule.js"></script>
@@ -55,6 +54,7 @@
     <script src="ext-modules/psFramework/psUserProfile/psUserProfileDirective.js"></script>
     <script src="ext-modules/psCharts/psChartsModule.js"></script>
     <script src="ext-modules/psCharts/psGaugeDirective.js"></script>
+    <script src="ext-modules/psCharts/psLineChartDirective.js"></script>
     <script src="ext-modules/psWebMetricsService/psWebMetricsService.js"></script>
     <script src="app/appModule.js"></script>
     <script src="app/appConfig.js"></script>
@@ -63,6 +63,7 @@
 
     <!-- widget JavaScript files -->
     <script src="app/widgets/rtaGauge/rtaGaugeWidgetDirective.js"></script>
+    <script src="app/widgets/rtaGauge/rtaLineChartWidgetDirective.js"></script>
     <!-- setting dialogs -->
     <script src="app/dialogs/rtaSelectMetricController.js"></script>
 </head>
@@ -78,7 +79,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
-        google.charts.load('current', { 'packages': ['gauge'] });
+        google.charts.load('current', { 'packages': ['gauge', 'corechart'] });
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {

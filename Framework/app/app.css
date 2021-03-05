@@ -11,3 +11,8 @@ body {
 .sign-in-form {
     padding: 80px;
 }
+
+
+a[role=menuitem]{
+    cursor:pointer!important;
+}
