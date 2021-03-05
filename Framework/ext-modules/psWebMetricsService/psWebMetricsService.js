@@ -30,21 +30,7 @@ angular.module('psWebMetricsService', []).factory('psWebMetricsService', [
 
         // 03/03/2021 05:58 am - SSN - [20210303-0437] - [002] - M03-08 - Showing the gauge
         if (true) {
-
-
-            const signalRHubUrl = `${$location.protocol()}://${$location.host()}/${location.port}`;
-
-
-            console.log('20210305-0712');
-            console.log(signalRHubUrl); 
-
-
-            //$.connection.hub.url = 'http://localhost:65470/signalr';
-           // Leaving out does not seem to have an impact.  Needed to dynmically assign.
              
-
-
-
             var hub = $.connection.metricHub;
             // Create a function that the hub can call to broadcast messages.
             hub.client.broadcastMessage = function (time, bandwidthPct, cpuPct,

@@ -73,6 +73,27 @@ angular.module('app').directive('rtaDashboard', ['$localStorage', function ($loc
                         }
                     }
                 }
+                ,
+                // 03/05/2021 12:56 pm - SSN - [20210305-1242] - [001] - M05-07 - Creating a dashboard widget (security monitor)
+
+                {
+                    title: 'Security Minitor',
+                    settings: {
+                        sizeX: 5,
+                        sizeY: 6,
+                        minSizeX: 5,
+                        minSizeY: 6,
+                        draggable: {
+                            handle: '.ps-drag-handle'
+                        },
+                        template: '<rta-security-monitor-widget ></rta-security-monitor-widget>',
+                        widgetSettings: {
+                            metric: '',
+                            templateUrl: '',
+                            controller: ''
+                        }
+                    }
+                }
             ];
 
             // 03/03/2021 09:11 am - SSN - [20210303-0846] - [002] - M03-10 - Resizing the gauge
