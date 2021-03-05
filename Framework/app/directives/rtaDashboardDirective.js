@@ -46,11 +46,26 @@ angular.module('app').directive('rtaDashboard', ['$localStorage', function ($loc
                 {
                     title: 'Line Chart',
                     settings: {
-                        sizeX: 2,
+                        sizeX: 6,
                         sizeY: 2,
                         minSizeX: 2,
                         minSizeY: 2,
                         template: '<rta-line-chart-widget ></rta-line-chart-widget>',
+                        widgetSettings: {
+                            metric: 'cpuPct',
+                            templateUrl: 'app/dialogs/rtaSelectMetricTemplate.html',
+                            controller: 'rtaSelectMetricController'
+                        }
+                    }
+                },
+                {
+                    title: 'Candlestick Chart',
+                    settings: {
+                        sizeX: 6,
+                        sizeY: 2,
+                        minSizeX: 2,
+                        minSizeY: 2,
+                        template: '<rta-candlestick-chart-widget ></rta-candlestick-chart-widget>',
                         widgetSettings: {
                             metric: 'cpuPct',
                             templateUrl: 'app/dialogs/rtaSelectMetricTemplate.html',

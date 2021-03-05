@@ -84,10 +84,13 @@
     <Content Include="app\dialogs\rtaSelectMetricController.js" />
     <Content Include="app\dialogs\rtaSelectMetricTemplate.html" />
     <Content Include="app\directives\rtaDashboardDirective.js" />
-    <Content Include="app\widgets\rtaGauge\rtaGaugeWidgetDirective.js" />
-    <Content Include="app\widgets\rtaGauge\rtaGaugeWidgetTemplate.html" />
-    <Content Include="app\widgets\rtaGauge\rtaLineChartTemplate.html" />
-    <Content Include="app\widgets\rtaGauge\rtaLineChartWidgetDirective.js" />
+    <Content Include="app\widgets\rtaCandlestickChartDirectiveWidget.js" />
+    <Content Include="app\widgets\rtaCandlestickChartTemplate.html" />
+    <Content Include="app\widgets\rtaGaugeWidgetDirective.js" />
+    <Content Include="app\widgets\rtaGaugeWidgetTemplate.html" />
+    <Content Include="app\widgets\rtaLineChartTemplate.html" />
+    <Content Include="app\widgets\rtaLineChartWidgetDirective.js" />
+    <Content Include="ext-modules\psCharts\psCandlestickChartDirective.js" />
     <Content Include="ext-modules\psCharts\psChartsModule.js" />
     <Content Include="ext-modules\psCharts\psGaugeDirective.js" />
     <Content Include="ext-modules\psCharts\psGaugeTemplate.html" />

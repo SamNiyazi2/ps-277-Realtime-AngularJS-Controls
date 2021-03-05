@@ -1,16 +1,19 @@
 ﻿
-// 03/04/2021 08:10 pm - SSN - [20210304-2003] - [001] - M04-09 - Creating a line chart widget
+
+// 03/04/2021 09:27 pm - SSN - [20210304-2116] - [001] - M04-10 - Creating a stock price widget
+
 
 'use strict';
 
-angular.module('app').directive('rtaLineChartWidget', ['psWebMetricsService',
+angular.module('app').directive('rtaCandlestickChartWidget', ['psWebMetricsService',
+
     function (psWebMetricsService) {
 
         return {
 
             // Scope is inherited 
 
-            templateUrl: '/app/widgets/rtaLineChartTemplate.html',
+            templateUrl: '/app/widgets/rtaCandlestickChartTemplate.html',
 
             link: function (scope, elem, attr) {
 

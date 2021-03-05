@@ -11,7 +11,7 @@ angular.module('app').directive('rtaGaugeWidget', ['psWebMetricsService',
 
             // Scope isherited from psWidgetBody
 
-            templateUrl: '/app/widgets/rtaGauge/rtaGaugeWidgetTemplate.html',
+            templateUrl: '/app/widgets/rtaGaugeWidgetTemplate.html',
 
             link: function (scope, element, attributes) {
 
