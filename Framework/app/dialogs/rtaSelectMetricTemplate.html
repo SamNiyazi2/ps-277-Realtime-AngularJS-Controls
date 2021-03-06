@@ -6,7 +6,12 @@
 <div class="modal-body">
     <h3>Metric</h3>
     <!-- ssn-code-reference-20210303-0943-->
-    <select ng-model="metric" ng-options="metric for metric in metrics"></select>
+    <!--<select ng-model="metric">
+        <option ng-repeat="entry2 in metrics_v02">{{entry2.descrip}}</option>
+    </select>-->
+
+    <select ng-model="metric_TEMP" ng-options="metricX.descrip for metricX in  metrics_v02  track by metricX.id" ng-change="selectMetric()"></select>
+   
 </div>
 
 <div class="modal-footer">

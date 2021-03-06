@@ -55,12 +55,13 @@ angular.module("psChartsModule").directive('psCandlestickChart', ['psWebMetricsS
                 };
 
 
-                scope.options.title = psWebMetricsService.getTitleForMetric(scope.metric);
 
                 scope.initialized = false;
 
                 scope.$on('psWebMetricsService-received-data-event', function (evt, data) {
 
+
+                    scope.options.title = psWebMetricsService.getTitleForMetric(scope.metric);
 
                     let value = Math.round(data[scope.metric]);
                     let d = new Date(data.time);

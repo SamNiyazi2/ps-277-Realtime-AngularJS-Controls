@@ -2,7 +2,7 @@
 <h3 class="ps-drag-handle">Security Monitor!</h3>
 
 <div class="app-security-select">
-    <select ng-model="filter">
+    <select ng-model="filter" gridster-no-drag ng-change="filterChanged()">
         <option>All</option>
         <option>Sign On</option>
         <option>Sign Off</option>

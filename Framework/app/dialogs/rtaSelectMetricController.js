@@ -7,12 +7,14 @@ angular.module('app').controller('rtaSelectMetricController', ['$scope', 'psWebM
 
     function ($scope, psWebMetricsService) {
 
-        $scope.metrics = psWebMetricsService.getMetricsArray();
-        $scope.metric = $scope.metrics[0];
+        $scope.metrics_v02 = psWebMetricsService.getMetricsArray_v02();
+         
 
-        for (let i = 0; i < $scope.metrics.length; i++) {
-            if ($scope.metrics[i] === $scope.item.widgetSettings.metric) {
-                $scope.metric = $scope.metrics[i];
+        $scope.metric_TEMP = $scope.metrics_v02[0];
+
+        for (let i = 0; i < $scope.metrics_v02.length; i++) {
+            if ($scope.metrics_v02[i].id === $scope.item.widgetSettings.metric) {
+                $scope.metric_TEMP= $scope.metrics_v02[i];
             }
         }
 
@@ -20,9 +22,17 @@ angular.module('app').controller('rtaSelectMetricController', ['$scope', 'psWebM
 
             $scope.item.widgetSettings.metric = $scope.metric;
             $scope.$parent.metric = $scope.metric;
-            $scope.setTitle(psWebMetricsService.getTitleForMetric($scope.metric));
+
+            const titleToSet = psWebMetricsService.getTitleForMetric($scope.metric);
+
+            $scope.setTitle(titleToSet);
             $scope.$close();
         };
 
+        $scope.selectMetric = function (value) {
+            
+            $scope.metric = $scope.metric_TEMP.id;
+            
+        }
 
     }]);

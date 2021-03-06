@@ -36,19 +36,15 @@ angular.module('psChartsModule').directive('psGauge', ['psWebMetricsService',
                     scope.options.height = widget.height();
                 });
 
-
-
-                scope.title = psWebMetricsService.getTitleForMetric(scope.metric)
-
-                scope.setTitle = function (newTitle) {
-                    scope.title = newTitle;
-                }
+                 
 
                 scope.data = google.visualization.arrayToDataTable([
 
                     ['Label', 'Value'],
                     [scope.title, 0]
                 ]);
+
+
 
                 scope.chart = new google.visualization.Gauge(elem[0]);
 
@@ -57,13 +53,16 @@ angular.module('psChartsModule').directive('psGauge', ['psWebMetricsService',
 
             }
 
-         //   scope.data.setValue(0, 0, scope.title);
 
             if (data) {
                 scope.data.setValue(0, 1, Math.round(data[scope.metric]));
             } else {
                 scope.data.setValue(0, 1, 0);
             }
+             
+            scope.title = psWebMetricsService.getTitleForMetric(scope.metric)
+              
+            scope.data.setValue(0, 0, scope.title);
 
             scope.chart.draw(scope.data, scope.options);
         }

@@ -20,6 +20,10 @@ angular.module('app').directive('rtaGaugeWidget', ['psWebMetricsService',
                 // 03/03/2021 10:15 am - SSN - [20210303-1002] - [001] - M03-13 - SignalR Disconnections
                 scope.error = false;
 
+                scope.setTitle = function (title) {
+                    scope.title = title;
+                }
+
                 scope.$on('psWebMetricsService-disconnected-event', function (evt, data) {
 
                     scope.$apply(function () {

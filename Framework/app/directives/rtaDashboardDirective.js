@@ -26,6 +26,12 @@ angular.module('app').directive('rtaDashboard', ['$localStorage', function ($loc
             };
 
 
+            // Leaving widgetSettings.templateUrl empty, disables the settings menu option for the widget.
+            // Leaving widgetSettings.templateUrl empty, disables the settings menu option for the widget.
+            // Leaving widgetSettings.templateUrl empty, disables the settings menu option for the widget.
+            // Leaving widgetSettings.templateUrl empty, disables the settings menu option for the widget.
+
+
             scope.widgetDefinitions = [
 
                 {
@@ -79,10 +85,10 @@ angular.module('app').directive('rtaDashboard', ['$localStorage', function ($loc
                 {
                     title: 'Security Minitor',
                     settings: {
-                        sizeX: 5,
-                        sizeY: 6,
-                        minSizeX: 5,
-                        minSizeY: 6,
+                        sizeX: 4,
+                        sizeY: 5,
+                        minSizeX: 4,
+                        minSizeY: 5,
                         draggable: {
                             handle: '.ps-drag-handle'
                         },

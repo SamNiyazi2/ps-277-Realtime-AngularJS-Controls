@@ -9,7 +9,7 @@
 angular.module('appSecurityMonitorModule').directive('psSecurityMonitor', [
 
 
-    function ( ) {
+    function () {
 
 
         return {
@@ -27,11 +27,12 @@ angular.module('appSecurityMonitorModule').directive('psSecurityMonitor', [
                 // 03/05/2021 01:06 pm - SSN - [20210305-1242] - [004] - M05-07 - Creating a dashboard widget (security monitor)
 
                 scope.setTitle = function (title) {
+
                     scope.title = title;
                 }
 
 
-                scope.filter = 'all';
+                scope.filter = 'All';
                 scope.messages = [];
 
                 scope.autoScroll = true;
@@ -39,7 +40,7 @@ angular.module('appSecurityMonitorModule').directive('psSecurityMonitor', [
                 scope.$on('psSecurityMonitorService-received-data-event', function (evt, data) {
 
 
-                    if (scope.filter === 'all' || scope.filter === data.event) {
+                    if (scope.filter === 'All' || scope.filter === data.event) {
 
                         scope.$apply(function () {
 
@@ -53,18 +54,31 @@ angular.module('appSecurityMonitorModule').directive('psSecurityMonitor', [
 
                     if (scope.autoScroll) {
                         let divs = elem.find('div.app-security-list');
-
                         divs[0].scrollTop = divs[0].scrollHeight;
                     }
                 });
 
 
                 let divs = elem.find('div.app-security-list');
-                divs[0].scroll(function (event, data) {
 
-                    scope.autoScroll = !(this.scrollTop < (this.scrollHeight - $(this).height()));
+
+                $(divs[0]).scroll(function (event, data) {
+
+                    scope.autoScroll = !(this.scrollTop + 10 < (this.scrollHeight - $(this).height()));
 
                 });
+
+
+                if (scope.item.widgetSettings.filter) {
+
+                    scope.filter = scope.item.widgetSettings.filter;
+                }
+
+                scope.filterChanged = function () {
+
+                    scope.item.widgetSettings.filter = scope.filter;
+                }
+
             }
         };
 

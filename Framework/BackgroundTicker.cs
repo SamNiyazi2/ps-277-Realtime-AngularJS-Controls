@@ -32,7 +32,7 @@ namespace RealtimeAngular
 
             hub = GlobalHost.ConnectionManager.GetHubContext<MetricHub>();
 
-            taskTimer = new Timer(onTimerElased, null, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1));
+            taskTimer = new Timer(onTimerElased, null, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(5));
         }
 
 

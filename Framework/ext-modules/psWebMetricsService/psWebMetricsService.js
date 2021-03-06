@@ -120,6 +120,16 @@ angular.module('psWebMetricsService', []).factory('psWebMetricsService', [
             return ['time', 'bandwidthPct', 'cpuPct', 'salesAmt', 'alphaSalesAmt', 'betaSalesAmt'];
         }
 
+        var getMetricsArray_v02 = function () {
+            return [
+                { id: 'time', descrip: 'Time' },
+                { id: 'bandwidthPct', descrip: 'Bandwidth %' },
+                { id: 'cpuPct', descrip: 'CPU %' },
+                { id: 'salesAmt', descrip: 'Sales Amount' },
+                { id: 'alphaSalesAmt', descrip: 'Alpha Sales Amount' },
+                { id: 'betaSalesAmt', descrip: 'Beta Sales Amount' }];
+        }
+
         // 03/04/2021 08:39 pm - SSN - [20210304-2003] - [003] - M04-09 - Creating a line chart widget
         // Copied from C:\Sams_P\PS\building-realtime-angular-controls\Homework\ps-realtimeangularjs\ps-realtimeangularjs\ext-modules\psWebMetricsService\psWebMetricsService.js
 
@@ -133,6 +143,7 @@ angular.module('psWebMetricsService', []).factory('psWebMetricsService', [
         return {
             getTitleForMetric: getTitleForMetric,
             getMetricsArray: getMetricsArray,
+            getMetricsArray_v02: getMetricsArray_v02,
             getLiveData: getLiveData
         };
 

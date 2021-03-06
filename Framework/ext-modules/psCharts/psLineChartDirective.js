@@ -57,7 +57,6 @@ angular.module('psChartsModule').directive('psLineChart', ['psWebMetricsService'
 
 
 
-            scope.options.title = psWebMetricsService.getTitleForMetric(scope.metric);
             scope.initialized = false;
 
             scope.MAX_RECORD_COUNT = 20;
@@ -71,6 +70,10 @@ angular.module('psChartsModule').directive('psLineChart', ['psWebMetricsService'
                 return psWebMetricsService.getLiveData();
             },
                 function (newData) {
+
+
+                    scope.options.title = psWebMetricsService.getTitleForMetric(scope.metric);
+
 
                     var data = newData;
 

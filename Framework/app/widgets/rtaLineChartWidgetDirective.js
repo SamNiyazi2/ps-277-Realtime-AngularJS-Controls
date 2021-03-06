@@ -19,6 +19,7 @@ angular.module('app').directive('rtaLineChartWidget', ['psWebMetricsService',
                 scope.error = false;
 
                 scope.setTitle = function (title) {
+
                     scope.title = title;
                 }
 
