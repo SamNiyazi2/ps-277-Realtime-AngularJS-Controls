@@ -14,7 +14,7 @@
     <RootNamespace>RealtimeAngular</RootNamespace>
     <AssemblyName>RealtimeAngular</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -963,7 +963,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65470</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:65470/</IISUrl>
+          <IISUrl>http://p3181.nonbs.org:3181</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
